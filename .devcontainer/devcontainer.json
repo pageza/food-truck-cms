@@ -22,6 +22,5 @@
         "ms-azuretools.vscode-docker"
       ]
     }
-  },
-  "initializeCommand": "./.devcontainer/setup.sh"
+  }
 }
