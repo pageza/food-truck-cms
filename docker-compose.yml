@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_HOST=postgres
+      - DB_USER=devuser
+      - DB_PASSWORD=devpassword
+      - DB_NAME=devdb
+      - REDIS_HOST=redis
+    volumes:
+      - .:/workspace
+    command: bash -c "service postgresql start && service redis-server start && go run ./cmd/main.go"
+
+  postgres:
+    image: postgres:12
+    environment:
+      POSTGRES_USER: devuser
+      POSTGRES_PASSWORD=devpassword
+      POSTGRES_DB=devdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+volumes:
+  postgres-data:
