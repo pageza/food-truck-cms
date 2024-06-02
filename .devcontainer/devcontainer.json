@@ -10,7 +10,7 @@
     "ms-azuretools.vscode-docker"
   ],
   "forwardPorts": [8080, 5432, 6379],
-  "postCreateCommand": "go mod tidy",
+  "postCreateCommand": "go mod tidy && chmod +x .devcontainer/setup.sh && ./.devcontainer/setup.sh",
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:1": {}
   },
