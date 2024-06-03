@@ -1,0 +1,60 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Output of the go coverage tool
+*.out
+
+# Temporary files
+*.tmp
+*.log
+
+# Go dependencies
+vendor/
+
+# Go modules
+go.sum
+
+# IDE specific files
+.vscode/
+.idea/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Docker files
+docker-compose.override.yml
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Build directories
+bin/
+build/
+
+# Database related files
+*.db
+*.sqlite
+
+# Testing
+coverage/
+*.coverprofile
+
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+.env.*
+
+# IDE specific settings
+/.idea
+/.vscode
+
+# Ignore database and Redis data files if you plan to keep them locally
+data/

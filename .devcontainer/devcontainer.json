@@ -1,14 +1,6 @@
 {
   "name": "Go Dev Environment",
-  "image": "mcr.microsoft.com/devcontainers/go:0-1.16",
-  "settings": {
-    "terminal.integrated.defaultProfile.linux": "bash"
-  },
-  "extensions": [
-    "golang.Go",
-    "esbenp.prettier-vscode",
-    "ms-azuretools.vscode-docker"
-  ],
+  "image": "mcr.microsoft.com/devcontainers/go:0-1",
   "forwardPorts": [8080, 5432, 6379],
   "postCreateCommand": "go mod tidy && chmod +x .devcontainer/setup.sh && ./.devcontainer/setup.sh",
   "features": {
@@ -16,12 +8,15 @@
   },
   "customizations": {
     "vscode": {
-      "settings": {},
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
       "extensions": [
-        "golang.go",
+        "golang.Go",
+        "esbenp.prettier-vscode",
         "ms-azuretools.vscode-docker"
       ]
     }
-  },
-  "initializeCommand": "./.devcontainer/setup.sh"
+  }
 }
+
